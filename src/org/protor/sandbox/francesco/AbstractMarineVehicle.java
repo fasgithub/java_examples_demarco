@@ -1,12 +1,24 @@
 package org.protor.sandbox.francesco;
 
-public abstract class AbstractMarineVehicle extends AbstractVehicle{
+import java.io.File;
 
-	public AbstractMarineVehicle(EnumGroundContactType type) {
-		super(type);
+public abstract class AbstractMarineVehicle extends AbstractVehicle {
+
+	public AbstractMarineVehicle(File configFile) {
+		super(configFile);
 	}
 
-	public AbstractMarineVehicle(String name, EnumGroundContactType type) {
-		super(name, type);
+	public AbstractMarineVehicle(String name, EnumEngineType engineType, double range, double endurance,
+			int numMaxPassengers, double maxPayload) {
+		super(name, engineType, range, endurance, numMaxPassengers, maxPayload);
 	}
+
+	public AbstractMarineVehicle(EnumEngineType engineType) {
+		super(engineType);
+	}
+
+	public AbstractMarineVehicle(String name, EnumEngineType engineType) {
+		super(name, engineType);
+	}
+
 }

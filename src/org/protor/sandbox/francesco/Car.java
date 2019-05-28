@@ -2,40 +2,52 @@ package org.protor.sandbox.francesco;
 
 import java.io.File;
 
-public class Car extends AbstractTerrestrialVehicle{
+public class Car extends AbstractTerrestrialVehicle {
 
-	public Car(EnumGroundContactType type) {
-		super(type);
-		// TODO Auto-generated constructor stub
+	public Car(EnumEngineType engineType) {
+		super(engineType);
 	}
 
 	public Car(File configFile) {
 		super(configFile);
-		// TODO Auto-generated constructor stub
 	}
 
-	public Car(String name, EnumGroundContactType engineType, double range, double endurance, int numMaxPassengers,
+	public Car(String name, EnumEngineType engineType, double range, double endurance, int numMaxPassengers,
 			double maxPayload, EnumGroundContactType groundContactType) {
 		super(name, engineType, range, endurance, numMaxPassengers, maxPayload, groundContactType);
-		// TODO Auto-generated constructor stub
+
 	}
 
-	public Car(String name, EnumGroundContactType engineType, double range, double endurance, int numMaxPassengers,
+	public Car(String name, EnumEngineType engineType, double range, double endurance, int numMaxPassengers,
 			double maxPayload) {
 		super(name, engineType, range, endurance, numMaxPassengers, maxPayload);
 	}
 
-	public Car(String name, EnumGroundContactType type) {
-		super(name, type);
+	public Car(String name, EnumEngineType engineType) {
+		super(name, engineType);
 	}
 
 	@Override
 	protected boolean loadFromFile(File configFile) {
 		
-		System.out.println("[Car] Reading data from file: " + configFile.getAbsolutePath());
-		System.out.println("... function not implemented yer");
+		// TODO agodemar: implement the logic here
+		
+		System.out.println("[Car] Reading data from file: "
+				+ configFile.getAbsolutePath());
+		
+		System.out.println("... function not implemented yet.");
+		
 		return false;
 	}
-	
 
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder("--- Car Object ---\n");
+		sb.append("Name: " + this.name + "\n");
+		sb.append("Ground contact: " + this.groundContactType + "\n");
+		sb.append("Engine type: " + this.engineType + "\n");
+		sb.append("------------------------\n");
+		return sb.toString();
+	}
+	
 }
